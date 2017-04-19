@@ -1,7 +1,7 @@
 require "slack"
 require "date"
 
-TOKEN = "xoxb-171683075394-rANMa3wjjrOwXmDC7fqtor5f"
+TOKEN = "xoxb-171683075394-gGVVRjbZoKn5Xin9O0GuMTQW"
 
 Slack.configure {|config| config.token = TOKEN }
 client = Slack.realtime
