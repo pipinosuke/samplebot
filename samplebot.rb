@@ -20,10 +20,10 @@ client.on :message do |data|
     Slack.chat_postMessage(text: "おやすみー", channel: "general") if data["text"].include?("おやすみ")
   end
 
-  break unless time.min + time.sec == 00
+  next unless time.min + time.sec == 00
     if time.hour == 07
       Slack.chat_postMessage(text: "おはようだぶー", channel: "general")
-      break unless date.day == 25
+      next unless date.day == 25
       Slack.chat_postMessage(text: "そろそろ家賃払うぶー", channel: "general")
     end
 

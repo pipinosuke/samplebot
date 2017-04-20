@@ -1,1 +1,1 @@
-samplebot: bundle exec ruby samplebot.rb
+samplebott: bundle exec ruby samplebot.rb
