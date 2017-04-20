@@ -1,1 +1,1 @@
-samplebott: bundle exec ruby samplebot.rb
+web: bundle exec ruby samplebot.rb
