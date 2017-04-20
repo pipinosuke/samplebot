@@ -24,7 +24,7 @@ client.on :message do |data|
     Slackpost("うんこ！うんこ！", "general") if data["text"].include?("うん")
     Slackpost("おはよー", "general") if data["text"].include?("おは")
     Slackpost("おやすみ","general") if data["text"].include?("おやす")
-    Slackpost("#{time.hour}時#{time.min}分#{time.sec}秒です") if data["時間は？"]
+    Slackpost("#{time.hour}時#{time.min}分#{time.sec}秒です") if data["text"] == "時間は？"
   end
 
   if time.min == 17 && time.sec == 00
