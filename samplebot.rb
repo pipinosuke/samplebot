@@ -26,19 +26,18 @@ client.on :message do |data|
     Slackpost("おやすみ","general") if data["text"].include?("おやす")
   end
 
-  next unless time.min == 7 && time.sec == 00
+  if time.min == 17 && time.sec == 00
     if time.hour == 07
       Slackpost("おはよー", "general")
       next unless date.day == 25
       Slackpost("@here そろそろ家賃払うぶー", "general")
-    end
-
-    if time.hour == 19
+    elsif time.hour == 19
       Slack.chat_postMessage(text: "今日もお疲れー", channel: "general")
       Slackpost("今日もお疲れー","general")
       Slackpost("@here 明日は燃えるゴミの日","general") if date.wday == 6 || 3
       Slackpost("@here 明日は缶とペットボトルの日", "general" ) if date.wday == 4
     end
+  end
 end
 
 client.start
