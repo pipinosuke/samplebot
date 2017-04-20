@@ -10,7 +10,7 @@ client = Slack.realtime
 time = DateTime.now
 date = Date.today
 
-def Slackpost(text, channel)
+def Slackpost(text, channel = "general")
   Slack.chat_postMessage(text: "#{text}",channel: "#{channel}")
 end
 
@@ -21,12 +21,12 @@ end
 client.on :message do |data|
   # 得られたmessageにtestが含まれていて、botからのメッセージでなければ
   if data["subtype"] != "bot_message"
-    Slackpost("うんこ", "general") if data["text"].include?("うん")
-    Slackpost("おはよー", "general") if data["text"].include?("おはよ")
-    Slackpost("おやすみ","general") if data["text"].include?("おやすみ")
+    Slackpost("うんこ！うんこ！", "general") if data["text"].include?("うん")
+    Slackpost("おはよー", "general") if data["text"].include?("おは")
+    Slackpost("おやすみ","general") if data["text"].include?("おやす")
   end
 
-  next unless time.min + time.sec == 00
+  next unless time.min == 7 && time.sec == 00
     if time.hour == 07
       Slackpost("おはよー", "general")
       next unless date.day == 25
