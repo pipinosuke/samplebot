@@ -5,6 +5,7 @@ GEM
       public_suffix (~> 2.0, >= 2.0.2)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.2.0)
     eventmachine (1.2.3)
     faraday (0.12.0.1)
       multipart-post (>= 1.2, < 3)
@@ -42,14 +43,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   eventmachine
   faye-websocket
   http
   json
   slack-api
-
-RUBY VERSION
-   ruby 2.3.1p112
 
 BUNDLED WITH
    1.14.6

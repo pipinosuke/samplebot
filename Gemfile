@@ -5,3 +5,4 @@ gem 'json'
 gem 'faye-websocket'
 gem 'eventmachine'
 gem "slack-api"
+gem "dotenv"
