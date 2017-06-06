@@ -24,7 +24,7 @@ end
     Slackpost("<!channel>  そろそろ家賃払うぶー", "general") if date.day == 25
   elsif time.hour == 19
     Slackpost("今日もお疲れー","general")
-    Slackpost("<!channel> 明日は燃えるゴミの日","general") if date.wday == 6 || 3
+    Slackpost("<!channel> 明日は燃えるゴミの日","general") if date.wday == 6 || date.wday == 3
     Slackpost("<!channel> 明日は缶とペットボトルの日", "general" ) if date.wday == 4
   end
 
